@@ -13,6 +13,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.luissoriano.bmiapp.core.navigation.AppNavigation
+import com.luissoriano.bmiapp.features.bmi.screens.HomeScreen
 import com.luissoriano.bmiapp.ui.theme.BmiAppTheme
 
 class MainActivity : ComponentActivity() {
@@ -21,14 +23,8 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             BmiAppTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Column(
-                        modifier = Modifier.fillMaxSize().padding(innerPadding).padding(16.dp)
-                    ) {
-
-                    }
+                AppNavigation()
                 }
             }
         }
     }
-}
