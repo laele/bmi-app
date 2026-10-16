@@ -1,7 +1,11 @@
 package com.luissoriano.bmiapp.features.bmi.screens
 
+import android.R
+import android.widget.Space
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
@@ -18,13 +22,16 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.luissoriano.bmiapp.core.navigation.BMIResult
+import com.luissoriano.bmiapp.features.bmi.composables.ResultCard
+import com.luissoriano.bmiapp.ui.theme.AppBackground
 
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun BmiResultScreen(onGoBackPressed: () -> Unit) {
+fun BmiResultScreen(onGoBackPressed: () -> Unit, bmi: Double) {
     Scaffold(
         modifier = Modifier.fillMaxSize(),
+        containerColor = AppBackground,
         topBar = {
             TopAppBar(
                 navigationIcon = { IconButton(onClick = { onGoBackPressed() }) {
@@ -45,6 +52,10 @@ fun BmiResultScreen(onGoBackPressed: () -> Unit) {
                 .padding(16.dp)
         ) {
 
+            Text(String.format("%.2f", bmi), style = MaterialTheme.typography.displayLarge.copy(fontWeight = FontWeight.Bold) )
+            Text("Current BMI", style = MaterialTheme.typography.titleLarge)
+            Spacer( modifier = Modifier.height(16.dp))
+            ResultCard(bmi = bmi)
         }
     }
 }

@@ -13,6 +13,9 @@ kotlinxSerialization = "1.9.0"
 navigation3Runtime = "1.2.0"
 navigation3Ui = "1.2.0"
 ui = "1.12.1"
+uiGraphics = "1.12.1"
+material3 = "1.4.0"
+keep = "1.0.0-alpha01"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -36,6 +39,9 @@ navigation3-runtime = { group = "androidx.navigation3", name = "navigation3-runt
 navigation3-ui = { group = "androidx.navigation3", name = "navigation3-ui", version.ref = "navigation3Ui" }
 androidx-ui = { group = "androidx.compose.ui", name = "ui", version.ref = "ui" }
 androidx-material-icons-extended = { group = "androidx.compose.material", name = "material-icons-extended" }
+androidx-ui-graphics = { group = "androidx.compose.ui", name = "ui-graphics", version.ref = "uiGraphics" }
+androidx-material3 = { group = "androidx.compose.material3", name = "material3", version.ref = "material3" }
+androidx-keep = { group = "androidx.annotation.keep", name = "keep", version.ref = "keep" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

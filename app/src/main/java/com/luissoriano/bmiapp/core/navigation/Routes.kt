@@ -7,4 +7,4 @@ import kotlinx.serialization.Serializable
 data object Home: NavKey
 
 @Serializable
-data object BMIResult : NavKey
+data class BMIResult(val bmi: Double) : NavKey

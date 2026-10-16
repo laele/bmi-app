@@ -14,10 +14,10 @@ fun AppNavigation() {
         backStack = backStack,
         entryProvider =  entryProvider {
             entry<Home> {
-                HomeScreen(onBmiCalculatePressed= { backStack.add(BMIResult)})
+                HomeScreen(onBmiCalculatePressed = { bmi -> backStack.add(BMIResult(bmi = bmi)) })
             }
-            entry <BMIResult> {
-                BmiResultScreen(onGoBackPressed = { backStack.removeLastOrNull() })
+            entry <BMIResult> { data ->
+                BmiResultScreen(bmi = data.bmi, onGoBackPressed = { backStack.removeLastOrNull() })
             }
         }
     )
